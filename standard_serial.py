@@ -3,27 +3,27 @@ from time import sleep
 
 if __name__ == "__main__":
 
-    serial_port = "/dev/ttyS0"
+    serial_port = "COM9"
     baudrate = 38400
 
     roboclaw = Serial(serial_port, baudrate, timeout=1)
     
     while True:
     
-        roboclaw.write(chr(94))
+        roboclaw.write(bytes([94]))
         sleep(2)
-        roboclaw.write(chr(64))
+        roboclaw.write(bytes([64]))
         sleep(2)
-        roboclaw.write(chr(32))
+        roboclaw.write(bytes([32]))
         sleep(2)
-        roboclaw.write(chr(64))
+        roboclaw.write(bytes([64]))
         sleep(2)
         
-        roboclaw.write(chr(223))
+        roboclaw.write(bytes([223]))
         sleep(2)
-        roboclaw.write(chr(192))
+        roboclaw.write(bytes([192]))
         sleep(2)
-        roboclaw.write(chr(160))
+        roboclaw.write(bytes([160]))
         sleep(2)
-        roboclaw.write(chr(192))
+        roboclaw.write(bytes([192]))
         sleep(2)
